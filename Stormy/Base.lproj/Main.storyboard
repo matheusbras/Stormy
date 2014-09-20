@@ -71,6 +71,21 @@
                                     <constraint firstAttribute="height" constant="60" id="LvR-NM-cqq"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpG-Fz-UZm">
+                                <rect key="frame" x="140" y="28" width="43" height="43"/>
+                                <state key="normal" image="refresh">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="refresh" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FZb-Qn-zc8"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="gCB-BB-6jN">
+                                <rect key="frame" x="151" y="40" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="degree" translatesAutoresizingMaskIntoConstraints="NO" id="Fkd-g9-oiX">
+                                <rect key="frame" x="268" y="196" width="36" height="36"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
@@ -85,15 +100,21 @@
                             <constraint firstItem="D5k-jo-s1e" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="72" id="HHV-vg-rl6"/>
                             <constraint firstAttribute="centerX" secondItem="Aq3-GC-ppW" secondAttribute="centerX" constant="-32.5" id="KGs-Jb-IGk"/>
                             <constraint firstAttribute="centerX" secondItem="ypN-bY-UcO" secondAttribute="centerX" constant="-0.5" id="KZg-y8-pwV"/>
+                            <constraint firstItem="gCB-BB-6jN" firstAttribute="centerY" secondItem="PpG-Fz-UZm" secondAttribute="centerY" constant="0.5" id="RiY-xo-Dvu"/>
+                            <constraint firstAttribute="centerX" secondItem="PpG-Fz-UZm" secondAttribute="centerX" constant="-1.5" id="Tp5-HT-wH0"/>
                             <constraint firstItem="cMN-Yd-ini" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="40" id="UXS-65-LcR"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="q2l-sC-oXu" secondAttribute="bottom" constant="90" id="X0C-vh-MgN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Foi-1q-T7T" secondAttribute="trailing" constant="36" id="c1R-GG-wYf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hyK-TS-ybu" secondAttribute="trailing" constant="41" id="e9U-Dq-WLn"/>
                             <constraint firstAttribute="centerY" secondItem="ypN-bY-UcO" secondAttribute="centerY" id="eoW-dR-PMy"/>
+                            <constraint firstItem="gCB-BB-6jN" firstAttribute="centerX" secondItem="PpG-Fz-UZm" secondAttribute="centerX" constant="-0.5" id="jA5-BR-Po2"/>
                             <constraint firstItem="Foi-1q-T7T" firstAttribute="top" secondItem="hyK-TS-ybu" secondAttribute="bottom" constant="10" id="qSr-r7-xKw"/>
                             <constraint firstItem="D5k-jo-s1e" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="22" id="t66-kJ-dsF"/>
                             <constraint firstItem="Aq3-GC-ppW" firstAttribute="leading" secondItem="D5k-jo-s1e" secondAttribute="trailing" constant="5" id="tOk-B2-pER"/>
+                            <constraint firstItem="Fkd-g9-oiX" firstAttribute="leading" secondItem="ypN-bY-UcO" secondAttribute="trailing" constant="-18" id="tiZ-Lf-x1N"/>
                             <constraint firstItem="Aq3-GC-ppW" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="89" id="u4N-mk-JFY"/>
+                            <constraint firstItem="Aq3-GC-ppW" firstAttribute="top" secondItem="PpG-Fz-UZm" secondAttribute="bottom" constant="38" id="wJn-OZ-yre"/>
+                            <constraint firstItem="ypN-bY-UcO" firstAttribute="top" secondItem="Fkd-g9-oiX" secondAttribute="bottom" constant="-34" id="yOA-Zy-WAs"/>
                         </constraints>
                     </view>
                     <connections>
@@ -101,6 +122,8 @@
                         <outlet property="humidity" destination="Ej2-0z-r6F" id="V1c-pK-V6v"/>
                         <outlet property="icon" destination="D5k-jo-s1e" id="1T8-9Z-uhO"/>
                         <outlet property="precipitation" destination="Foi-1q-T7T" id="tg5-uV-M2d"/>
+                        <outlet property="refreshActivityIndicator" destination="gCB-BB-6jN" id="2VI-Jf-pxl"/>
+                        <outlet property="refreshButton" destination="PpG-Fz-UZm" id="lg7-f9-b68"/>
                         <outlet property="summary" destination="q2l-sC-oXu" id="G4d-xq-FGQ"/>
                         <outlet property="temperature" destination="ypN-bY-UcO" id="N6a-N0-u4I"/>
                     </connections>
@@ -112,6 +135,8 @@
     </scenes>
     <resources>
         <image name="cloudy-night" width="46" height="43"/>
+        <image name="degree" width="36" height="36"/>
+        <image name="refresh" width="43" height="43"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
